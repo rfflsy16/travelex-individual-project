@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Bali Beach Resort",
+    "location": "Bali",
+    "description": "Beautiful beach resort with ocean views",
+    "rating": 4.7
+  },
+  {
+    "id": 2,
+    "name": "Borobudur Temple",
+    "location": "Magelang, Central Java",
+    "description": "Ancient Buddhist temple with historical significance",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "name": "Mount Bromo",
+    "location": "East Java",
+    "description": "Active volcano with beautiful sunrise views",
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "name": "Raja Ampat Islands",
+    "location": "West Papua",
+    "description": "Tropical paradise with diverse marine life",
+    "rating": 4.9
+  }
+]
