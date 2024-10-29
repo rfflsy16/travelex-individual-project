@@ -51,6 +51,18 @@ module.exports = {
         type: Sequelize.STRING,
         defaultValue: 'user'
       },
+      imgUrl: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        validate: {
+          notNull: {
+            msg: 'Profile Picture is required'
+          },
+          notEmpty: {
+            msg: 'Profile Picture is required'
+          }
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

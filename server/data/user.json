@@ -4,20 +4,23 @@
     "username": "john_doe",
     "email": "john@example.com",
     "password": "password123",
-    "role": "admin"
+    "role": "admin",
+    "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
   },
   {
     "id": 2,
     "username": "jane_smith",
     "email": "jane@example.com",
     "password": "password123",
-    "role": "admin"
+    "role": "admin",
+    "imgUrl": "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
     "id": 3,
     "username": "travel_guru",
     "email": "guru@example.com",
     "password": "password123",
-    "role": "admin"
+    "role": "admin",
+    "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg"
   }
 ]

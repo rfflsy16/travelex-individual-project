@@ -6,20 +6,20 @@ const { OAuth2Client } = require('google-auth-library');
 class UserController {
     static async register(req, res, next) {
         try {
-            const { username, email, password, role } = req.body
-            const user = await User.create({ username, email, password, role })
+            const { username, email, password, role, imgUrl } = req.body
+            const user = await User.create({ username, email, password, role, imgUrl })
 
             res.status(201).json({
                 message: 'Success Regist Account',
                 user
             })
         } catch (error) {
-            console.log(error)
+            // console.log(error)
 
-            res.status(400).json({
-                message: error.errors[0].message
-            })
-            // next(error)
+            // res.status(400).json({
+            //     message: error.errors[0].message
+            // })
+            next(error)
         }
     }
 
@@ -55,11 +55,7 @@ class UserController {
             })
         } catch (error) {
             console.log(error)
-            if(error.name === 'notFound') {
-                res.status(404).json({
-                    message: 'Account not found'
-                })
-            }
+            next(error)
         }
     }
     static async googleLogin(req, res, next) {
