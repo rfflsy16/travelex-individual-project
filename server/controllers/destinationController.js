@@ -1,4 +1,3 @@
-const { DECIMAL, where } = require('sequelize')
 const { User, Destination, Wishlist } = require('../models')
 
 class DestinationController {

@@ -27,7 +27,7 @@ class UserController {
         try {
             const { email, password } = req.body
 
-            if (!email || !password) throw { name: 'InvalidLogin' }
+            if (!email || !password) throw { name: 'LoginError' }
 
             const userLogin = await User.findOne({
                 where: {
@@ -37,7 +37,7 @@ class UserController {
 
             console.log(userLogin)
 
-            if (!userLogin) throw { name: 'notFound' }
+            if (!userLogin) throw { name: 'NotFound' }
 
             if (!compare(password, userLogin.password)) throw { name: 'LoginError' }
 

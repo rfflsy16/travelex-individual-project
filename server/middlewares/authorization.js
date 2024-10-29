@@ -27,11 +27,12 @@ const checkStaffUserOrAdmin = async (req, res, next) => {
 
             if (!wishlist) throw { name: 'WishlistNotFound' }
 
-            if (wishlist.user_id !== userId) throw { name: 'notAuthor' }
+            if (wishlist.user_id !== userId) throw { name: 'NotAuthor' }
         }
         next()
     } catch (error) {
         console.log(error)
+        next(error)
     }
 }
 
