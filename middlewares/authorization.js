@@ -16,7 +16,7 @@ const checkStaffUserOrAdmin = async (req, res, next) => {
     const { role, userId } = req.loginInfo
     try {
         // console.log(req.params);
-        if (role !== 'admin') {
+        if (role !== 'admin' && role === 'user') {
             const user = await User.findByPk(userId)
 
             if (!user) throw { name: "Forbidden" }
@@ -31,8 +31,7 @@ const checkStaffUserOrAdmin = async (req, res, next) => {
         }
         next()
     } catch (error) {
-        //  console.log(error)
-        next(error)
+        console.log(error)
     }
 }
 

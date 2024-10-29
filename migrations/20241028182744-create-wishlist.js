@@ -9,10 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -28,6 +24,14 @@ module.exports = {
           model: 'Destinations',
           key: 'id'
         }
+      },
+      category: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

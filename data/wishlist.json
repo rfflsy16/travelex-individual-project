@@ -1,20 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Pantai",
     "user_id": 1,
-    "destination_id": 1
+    "destination_id": 1,
+    "category": "Pantai",
+    "status": "planned"
   },
   {
     "id": 2,
-    "name": "Gunung",
     "user_id": 2,
-    "destination_id": 3
+    "destination_id": 3,
+    "category": "Gunung",
+    "status": "visited"
   },
   {
     "id": 3,
-    "name": "Kota Wisata",
     "user_id": 3,
-    "destination_id": 2
+    "destination_id": 2,
+    "category": "Kota Wisata",
+    "status": "planned"
   }
 ]

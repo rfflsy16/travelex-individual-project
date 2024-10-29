@@ -1,7 +1,7 @@
-const e = require('express')
 const { User } = require('../models')
-const { where } = require('sequelize')
 const { compare } = require('../helpers/bcrypt')
+const { signToken } = require('../helpers/jwt')
+const { OAuth2Client } = require('google-auth-library');
 
 class UserController {
     static async register(req, res, next) {
@@ -47,15 +47,53 @@ class UserController {
                 role: userLogin.role
             }
 
+            const access_token = signToken(payload)
+
+            res.status(200).json({
+                message: 'Success log in to your account',
+                access_token
+            })
         } catch (error) {
             console.log(error)
+            if(error.name === 'notFound') {
+                res.status(404).json({
+                    message: 'Account not found'
+                })
+            }
         }
     }
     static async googleLogin(req, res, next) {
         try {
+            const { token } = req.headers
+            const client = new OAuth2Client()
 
+            const ticket = await client.verifyIdToken({
+                idToken: token,
+                audience: process.env.GOOGLE_CLIENT_ID
+            })
+
+            const payload = ticket.getPayload();
+
+            const [user, created] = await User.findOrCreate({
+                where: {
+                    username: payload.email
+                },
+                defaults: {
+                    username: payload.email,
+                    password: "password_google"
+                },
+                hooks: false
+            })
+
+            const access_token = signToken({
+                id: user.id,
+                username: user.username,
+            })
+
+            res.status(200).json({ access_token })
         } catch (error) {
             console.log(error)
+            next(error)
         }
     }
 }
