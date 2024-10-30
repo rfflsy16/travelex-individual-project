@@ -15,9 +15,42 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Destination.init({
-    name: DataTypes.STRING,
-    location: DataTypes.STRING,
-    description: DataTypes.TEXT,
+    name: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notNull: {
+          msg: 'name is required'
+        },
+        notEmpty: {
+          msg: 'name is required'
+        }
+      }
+    },
+    location: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notNull: {
+          msg: 'location is required'
+        },
+        notEmpty: {
+          msg: 'location is required'
+        }
+      }
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+      validate: {
+        notNull: {
+          msg: 'description is required'
+        },
+        notEmpty: {
+          msg: 'description is required'
+        }
+      }
+    },
     rating: DataTypes.FLOAT
   }, {
     sequelize,
