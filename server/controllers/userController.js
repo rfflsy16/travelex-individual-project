@@ -101,6 +101,8 @@ class UserController {
 
             if (!user) throw { name: 'NotFound' };
 
+            console.log('req.file:', req.file);
+
             const imageInBase64 = req.file.buffer.toString("base64");
             const base64Data = `data:${req.file.mimetype};base64,${imageInBase64}`;
 
