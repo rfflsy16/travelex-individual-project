@@ -26,5 +26,229 @@
     "location": "West Papua",
     "description": "Tropical paradise with diverse marine life",
     "rating": 4.9
+  },
+  {
+    "id": 5,
+    "name": "Jakarta City Center",
+    "location": "Jakarta",
+    "description": "Capital city of Indonesia with modern attractions",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Gili Islands",
+    "location": "Lombok, West Nusa Tenggara",
+    "description": "Small islands famous for beaches and diving spots",
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "name": "Yogyakarta Historical Sites",
+    "location": "Yogyakarta",
+    "description": "Cultural and historical heart of Indonesia",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Batu Adventure Park",
+    "location": "Batu, East Java",
+    "description": "Adventure park with various outdoor activities",
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "name": "Komodo National Park",
+    "location": "East Nusa Tenggara",
+    "description": "National park home to the Komodo dragon",
+    "rating": 4.9
+  },
+  {
+    "id": 10,
+    "name": "Bandung Shopping District",
+    "location": "Bandung, West Java",
+    "description": "Shopping area with fashion outlets and cafes",
+    "rating": 4.4
+  },
+  {
+    "id": 11,
+    "name": "Padang Culinary Street",
+    "location": "Padang, West Sumatra",
+    "description": "Famous street with Padang's best culinary offerings",
+    "rating": 4.6
+  },
+  {
+    "id": 12,
+    "name": "Tanjung Puting Ecotourism",
+    "location": "Central Kalimantan",
+    "description": "Ecotourism site known for orangutans and river cruises",
+    "rating": 4.7
+  },
+  {
+    "id": 13,
+    "name": "Belitung Beach",
+    "location": "Belitung",
+    "description": "Famous for its clear waters and granite rocks",
+    "rating": 4.6
+  },
+  {
+    "id": 14,
+    "name": "Lake Toba",
+    "location": "North Sumatra",
+    "description": "Largest volcanic lake with breathtaking views",
+    "rating": 4.7
+  },
+  {
+    "id": 15,
+    "name": "Mentawai Islands",
+    "location": "West Sumatra",
+    "description": "Surfing paradise with perfect waves",
+    "rating": 4.8
+  },
+  {
+    "id": 16,
+    "name": "Tanah Lot Temple",
+    "location": "Bali",
+    "description": "Iconic temple on the sea with beautiful sunsets",
+    "rating": 4.7
+  },
+  {
+    "id": 17,
+    "name": "Ubud Art Market",
+    "location": "Bali",
+    "description": "Traditional art market offering crafts and souvenirs",
+    "rating": 4.5
+  },
+  {
+    "id": 18,
+    "name": "Derawan Islands",
+    "location": "East Kalimantan",
+    "description": "Famous for snorkeling and diverse marine life",
+    "rating": 4.8
+  },
+  {
+    "id": 19,
+    "name": "Jomblang Cave",
+    "location": "Yogyakarta",
+    "description": "Underground cave with a dramatic beam of light",
+    "rating": 4.6
+  },
+  {
+    "id": 20,
+    "name": "Madakaripura Waterfall",
+    "location": "East Java",
+    "description": "Tall waterfall with lush greenery",
+    "rating": 4.7
+  },
+  {
+    "id": 21,
+    "name": "Wakatobi National Park",
+    "location": "Southeast Sulawesi",
+    "description": "Renowned for its marine biodiversity",
+    "rating": 4.9
+  },
+  {
+    "id": 22,
+    "name": "Prambanan Temple",
+    "location": "Yogyakarta",
+    "description": "Largest Hindu temple compound in Indonesia",
+    "rating": 4.8
+  },
+  {
+    "id": 23,
+    "name": "Bunaken Marine Park",
+    "location": "North Sulawesi",
+    "description": "Diving spot with stunning coral reefs",
+    "rating": 4.8
+  },
+  {
+    "id": 24,
+    "name": "Kawah Ijen",
+    "location": "East Java",
+    "description": "Volcano with a blue flame phenomenon",
+    "rating": 4.7
+  },
+  {
+    "id": 25,
+    "name": "Bali Safari and Marine Park",
+    "location": "Bali",
+    "description": "A popular safari park with diverse wildlife",
+    "rating": 4.5
+  },
+  {
+    "id": 26,
+    "name": "Nusa Penida Island",
+    "location": "Bali",
+    "description": "Island with breathtaking cliffs and beaches",
+    "rating": 4.8
+  },
+  {
+    "id": 27,
+    "name": "Lake Sentani",
+    "location": "Papua",
+    "description": "Beautiful lake surrounded by rolling hills",
+    "rating": 4.6
+  },
+  {
+    "id": 28,
+    "name": "Way Kambas National Park",
+    "location": "Lampung",
+    "description": "Sanctuary for Sumatran elephants and rhinos",
+    "rating": 4.7
+  },
+  {
+    "id": 29,
+    "name": "Tana Toraja",
+    "location": "South Sulawesi",
+    "description": "Traditional village with unique funeral rites",
+    "rating": 4.8
+  },
+  {
+    "id": 30,
+    "name": "Mount Rinjani",
+    "location": "Lombok",
+    "description": "Second-highest volcano in Indonesia",
+    "rating": 4.9
+  },
+  {
+    "id": 31,
+    "name": "Carstensz Pyramid",
+    "location": "Papua",
+    "description": "Highest summit in Oceania with snow peaks",
+    "rating": 4.8
+  },
+  {
+    "id": 32,
+    "name": "Baluran National Park",
+    "location": "East Java",
+    "description": "Known as the 'Little Africa' of Java",
+    "rating": 4.6
+  },
+  {
+    "id": 33,
+    "name": "Pangandaran Beach",
+    "location": "West Java",
+    "description": "Popular beach for surfing and sunset views",
+    "rating": 4.5
+  },
+  {
+    "id": 34,
+    "name": "Menjangan Island",
+    "location": "Bali",
+    "description": "Island with diverse marine life and clear waters",
+    "rating": 4.7
+  },
+  {
+    "id": 35,
+    "name": "Bukit Lawang",
+    "location": "North Sumatra",
+    "description": "Jungle area known for orangutan spotting",
+    "rating": 4.8
+  },
+  {
+    "id": 36,
+    "name": "Togean Islands",
+    "location": "Central Sulawesi",
+    "description": "Islands with crystal-clear waters and coral reefs",
+    "rating": 4.8
   }
 ]

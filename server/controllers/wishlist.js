@@ -1,4 +1,3 @@
-const { where } = require('sequelize')
 const { User, Destination, Wishlist } = require('../models')
 
 class WishlistController {
@@ -8,7 +7,7 @@ class WishlistController {
                 include: [
                     {
                         model: User,
-                        attributes: { exclude: ['password']}
+                        attributes: { exclude: ['password'] }
                     },
                     {
                         model: Destination
@@ -24,9 +23,19 @@ class WishlistController {
     }
     static async add(req, res, next) {
         try {
-            const { user_id } = req.loginInfo
-            const { destination_id, category, status } = req.body
-            const wishlist = await Wishlist.create({ destination_id, category, status, user_id })
+
+            const { id } = req.params
+            const { userId } = req.loginInfo
+
+            if (!id) throw { name: 'NotAuthor' }
+            if (!userId) throw { name: 'NotFound' }
+
+            const { user_id, destination_id, category, status } = req.body
+            const wishlist = await Wishlist.create({ destination_id, category, status, user_id }, {
+                where: {
+                    userId
+                }
+            })
 
             res.status(201).json({
                 message: 'Success add new Wishlist',
@@ -43,11 +52,11 @@ class WishlistController {
 
             const data = await Wishlist.findByPk(id)
 
-            if(!data) throw { name: 'NotFound' }
+            if (!data) throw { name: 'NotFound' }
 
             const { status } = req.body
 
-            const wishlist = await Wishlist.update({status}, {
+            const wishlist = await Wishlist.update({ status }, {
                 where: {
                     id
                 }
@@ -67,7 +76,7 @@ class WishlistController {
 
             let wishlist = await Wishlist.findByPk(id)
 
-            if(!wishlist) throw {name: 'NotFound'}
+            if (!wishlist) throw { name: 'NotFound' }
 
             await Wishlist.destroy({
                 where: {

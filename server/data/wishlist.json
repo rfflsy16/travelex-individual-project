@@ -19,5 +19,54 @@
     "destination_id": 2,
     "category": "Kota Wisata",
     "status": "planned"
+  },
+  {
+    "id": 4,
+    "user_id": 1,
+    "destination_id": 4,
+    "category": "Pulau",
+    "status": "planned"
+  },
+  {
+    "id": 5,
+    "user_id": 2,
+    "destination_id": 1,
+    "category": "Sejarah & Budaya",
+    "status": "visited"
+  },
+  {
+    "id": 6,
+    "user_id": 3,
+    "destination_id": 3,
+    "category": "Petualangan",
+    "status": "planned"
+  },
+  {
+    "id": 7,
+    "user_id": 1,
+    "destination_id": 2,
+    "category": "Taman Nasional",
+    "status": "planned"
+  },
+  {
+    "id": 8,
+    "user_id": 2,
+    "destination_id": 4,
+    "category": "Perbelanjaan & Hiburan",
+    "status": "visited"
+  },
+  {
+    "id": 9,
+    "user_id": 3,
+    "destination_id": 1,
+    "category": "Kuliner",
+    "status": "planned"
+  },
+  {
+    "id": 10,
+    "user_id": 1,
+    "destination_id": 3,
+    "category": "Ekowisata",
+    "status": "visited"
   }
 ]

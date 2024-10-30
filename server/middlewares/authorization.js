@@ -1,7 +1,7 @@
 const { Wishlist, User } = require('../models')
 const checkAdmin = async (req, res, next) => {
     try {
-        // console.log(req.loginInfo)
+        console.log(req.loginInfo)
         const { role } = req.loginInfo
 
         if (role !== 'admin') throw { name: 'Forbidden' }
@@ -13,27 +13,22 @@ const checkAdmin = async (req, res, next) => {
 }
 
 const checkStaffUserOrAdmin = async (req, res, next) => {
-    const { role, userId } = req.loginInfo
+    const { role, userId } = req.loginInfo;
     try {
-        // console.log(req.params);
-        if (role !== 'admin' && role === 'user') {
-            const user = await User.findByPk(userId)
+        if (role === 'user') {
+            const { id } = req.params;
 
-            if (!user) throw { name: "Forbidden" }
+            const wishlist = await Wishlist.findByPk(id);
+            if (!wishlist) throw { name: 'NotFound' };
 
-            const { id } = req.params
-
-            const wishlist = await Wishlist.findByPk(id)
-
-            if (!wishlist) throw { name: 'WishlistNotFound' }
-
-            if (wishlist.user_id !== userId) throw { name: 'NotAuthor' }
+            if (wishlist.user_id !== userId) throw { name: 'Forbidden' };
         }
-        next()
+        next();
     } catch (error) {
-        console.log(error)
-        next(error)
+        console.error(error);
+        next(error);
     }
-}
+};
+
 
 module.exports = { checkAdmin, checkStaffUserOrAdmin }

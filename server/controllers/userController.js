@@ -2,6 +2,7 @@ const { User } = require('../models')
 const { compare } = require('../helpers/bcrypt')
 const { signToken } = require('../helpers/jwt')
 const { OAuth2Client } = require('google-auth-library');
+const cloudinary = require('../middlewares/cloudinary')
 
 class UserController {
     static async register(req, res, next) {
@@ -92,6 +93,39 @@ class UserController {
             next(error)
         }
     }
+
+    static async upload(req, res, next) {
+        try {
+            const { id } = req.params;
+            const user = await User.findByPk(id);
+
+            if (!user) throw { name: 'NotFound' };
+
+            const imageInBase64 = req.file.buffer.toString("base64");
+            const base64Data = `data:${req.file.mimetype};base64,${imageInBase64}`;
+
+            const upload = await cloudinary.uploader.upload(base64Data, {
+                public_id: `user_${id}_profile`,
+                tags: ["profile"]
+            });
+
+            await User.update(
+                {
+                    imgUrl: upload.secure_url,
+                },
+                { where: { id } }
+            );
+
+            res.status(201).json({
+                message: `Success upload Profile Picture id ${id}`,
+                imgUrl: upload.secure_url
+            });
+        } catch (error) {
+            console.error(error);
+            next(error);
+        }
+    }
+
 }
 
 module.exports = UserController
