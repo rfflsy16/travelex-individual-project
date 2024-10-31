@@ -1,0 +1,91 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+export default function Navbar({ base_url }) {
+  const navigate = useNavigate();
+  const [user, setUser] = useState({ imgUrl: "", username: "" });
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      const token = localStorage.getItem("access_token");
+
+      try {
+        const response = await axios.get(`${base_url}/profile`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(response.data);
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
+
+    fetchUserProfile();
+  }, [base_url]);
+
+  function logout() {
+    localStorage.removeItem("access_token");
+    navigate("/login");
+  }
+
+  return (
+    <div className="navbar bg-gradient-to-r from-green-200 via-teal-100 to-green-300 text-gray-800 shadow-md">
+      <div className="navbar-start">
+        <Link
+          to="/"
+          className="text-2xl font-bold text-gray-800 normal-case ml-4 hover:text-teal-700 transition-all duration-300"
+        >
+          Travelex
+        </Link>
+      </div>
+
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link
+              to="/wishlist"
+              className="hover:text-teal-700 transition-all duration-300"
+            >
+              Wishlist
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/add-destination"
+              className="hover:text-teal-700 transition-all duration-300"
+            >
+              Add Destination
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="navbar-end flex items-center">
+        {/* Button Profile */}
+        <Link
+          to="/profile"
+          className="w-10 h-10 rounded-full overflow-hidden border-2 border-teal-500 mr-4"
+        >
+          <img
+            src={
+              user.imgUrl ||
+              "https://img.freepik.com/premium-vector/gray-circular-user-icon-darker-inner-silhouette-within-light-gray-circle-minimal-modern-style_213497-4884.jpg?w=1060"
+            }
+            alt={user.username}
+            className="w-full h-full object-cover"
+          />
+        </Link>
+
+        {/* Button Logout */}
+        <button
+          className="btn bg-gradient-to-r from-teal-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white font-semibold shadow-lg rounded-lg transform hover:scale-105 transition-all duration-300"
+          onClick={logout}
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  );
+}
