@@ -5,7 +5,7 @@ import Profile from "../views/Profile";
 import Register from "../views/Register";
 import Wishlist from "../views/Wishlist";
 import AddWishlist from "../views/AddWishlist";
-import BaseLayout from "../BaseLayout/BaseLayout";
+import BaseLayout from "../views/BaseLayout";
 
 const base_url = "http://localhost:3000";
 

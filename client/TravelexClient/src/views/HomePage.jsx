@@ -12,16 +12,6 @@ export default function HomePage({ base_url }) {
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
 
-  useEffect(() => {
-    const token = localStorage.getItem("access_token");
-    if (token) {
-      fetchDestination();
-      fetchRecommendations();
-    } else {
-      console.error("Token akses tidak ditemukan di localStorage.");
-    }
-  }, []);
-
   async function fetchDestination(query = "") {
     try {
       setLoading(true);
@@ -31,12 +21,11 @@ export default function HomePage({ base_url }) {
         },
         params: { search: query },
       });
+      console.log(data, "<<<<DATA");
+
       setDestination(data.destination);
     } catch (error) {
-      console.error(
-        "Error fetching destinations:",
-        error.response?.data || error.message
-      );
+      console.error("Error fetching destinations:", error.message);
     } finally {
       setLoading(false);
     }
@@ -49,14 +38,18 @@ export default function HomePage({ base_url }) {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
+      console.log(data, "<<<<DATA");
+
       setRecommendations(data.text);
     } catch (error) {
-      console.error(
-        "Error fetching recommendations:",
-        error.response?.data || error.message
-      );
+      console.error("Error fetching recommendations:", error.message);
     }
   }
+
+  useEffect(() => {
+    fetchDestination();
+    fetchRecommendations();
+  }, []);
 
   function handleSearch(e) {
     e.preventDefault();
@@ -74,10 +67,7 @@ export default function HomePage({ base_url }) {
         prevDestinations.filter((item) => item.id !== id)
       );
     } catch (error) {
-      console.error(
-        "Error deleting destination:",
-        error.response?.data || error.message
-      );
+      console.error("Error deleting destination:", error.message);
     }
   }
 
