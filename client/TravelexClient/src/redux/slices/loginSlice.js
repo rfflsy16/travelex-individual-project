@@ -1,38 +1,43 @@
+// loginSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const login = createAsyncThunk(
-    "auth/login",
-    async ({ email, password }, { rejectWithValue, dispatch }) => {
+    "user/login",
+    async ({ email, password }, { rejectWithValue }) => {
         try {
             const { data } = await axios.post(`http://localhost:3000/user/login`, { email, password });
             localStorage.setItem("access_token", data.access_token);
+            console.log("Login berhasil, token:", data.access_token);
             return data.access_token;
         } catch (error) {
-            return rejectWithValue(error.response.data);
+            console.error("Error saat login:", error);
+            return rejectWithValue(error.response?.data || error.message);
         }
     }
 );
 
 export const googleLogin = createAsyncThunk(
-    "auth/googleLogin",
-    async (credential, { rejectWithValue, dispatch }) => {
+    "user/google/login",
+    async (codeResponse, { rejectWithValue }) => {
         try {
             const { data } = await axios.post(
-                `${process.env.REACT_APP_BASE_URL}/user/google/login`,
+                `http://localhost:3000/user/google/login`,
                 null,
-                { headers: { token: credential } }
+                { headers: { token: codeResponse.credential } }
             );
             localStorage.setItem("access_token", data.access_token);
+            console.log("Google login berhasil, token:", data.access_token);
             return data.access_token;
         } catch (error) {
-            return rejectWithValue(error.response.data);
+            console.error("Error saat Google login:", error);
+            return rejectWithValue(error.response?.data || error.message);
         }
     }
 );
 
 const loginSlice = createSlice({
-    name: "auth",
+    name: "user",
     initialState: {
         accessToken: localStorage.getItem("access_token") || null,
         loading: false,

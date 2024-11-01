@@ -25,7 +25,7 @@ export default function Register({ base_url }) {
         <div className="w-full md:w-1/2 p-6">
           <img
             className="w-full h-full object-cover rounded-l-lg"
-            src="https://media.giphy.com/media/opvm3FXT2qYus/giphy.gif?cid=ecf05e470zh0avvhs7ohxcjuisjy3smg398j74ggaanqr581&ep=v1_gifs_related&rid=giphy.gif&ct=s"
+            src="https://media.giphy.com/media/9D1ZLMyr99fI7bWJy0/giphy.gif?cid=ecf05e47oax13725350k5qazk171l5ldi7nhcrnjdz0155mn&ep=v1_gifs_search&rid=giphy.gif&ct=g"
             alt="Nature"
           />
         </div>

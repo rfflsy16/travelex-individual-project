@@ -49,13 +49,11 @@ export default function AddWishlist({ base_url, onAdd }) {
         },
       }).showToast();
 
-      // Clear form fields and notify the parent component of the new item
       setUserId("");
       setDestinationId("");
       setCategory("");
       setStatus("Planned");
-      onAdd(data.wishlist); // Call the function passed down to update the list
-    } catch (error) {
+      onAdd(data.wishlist);
       console.error("Error adding wishlist:", error);
       Toastify({
         text: "Failed to add Wishlist",

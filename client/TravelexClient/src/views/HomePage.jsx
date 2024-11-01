@@ -1,3 +1,4 @@
+// HomePage.js
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
@@ -12,20 +13,30 @@ export default function HomePage({ base_url }) {
   const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
-    fetchDestination();
-    fetchRecommendations();
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      fetchDestination();
+      fetchRecommendations();
+    } else {
+      console.error("Token akses tidak ditemukan di localStorage.");
+    }
   }, []);
 
   async function fetchDestination(query = "") {
     try {
       setLoading(true);
       const { data } = await axios.get(`${base_url}/home`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
         params: { search: query },
       });
       setDestination(data.destination);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error(
+        "Error fetching destinations:",
+        error.response?.data || error.message
+      );
     } finally {
       setLoading(false);
     }
@@ -34,11 +45,16 @@ export default function HomePage({ base_url }) {
   async function fetchRecommendations() {
     try {
       const { data } = await axios.get(`${base_url}/home/recomendation`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
       });
       setRecommendations(data.text);
     } catch (error) {
-      console.error("Error fetching recommendations:", error);
+      console.error(
+        "Error fetching recommendations:",
+        error.response?.data || error.message
+      );
     }
   }
 
@@ -50,19 +66,23 @@ export default function HomePage({ base_url }) {
   async function handleDelete(id) {
     try {
       await axios.delete(`${base_url}/home/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.access_token}` },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
       });
       setDestination((prevDestinations) =>
         prevDestinations.filter((item) => item.id !== id)
       );
     } catch (error) {
-      console.error("Error deleting destination:", error);
+      console.error(
+        "Error deleting destination:",
+        error.response?.data || error.message
+      );
     }
   }
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-6 space-y-4">
-      {/* Search Form */}
       <form
         onSubmit={handleSearch}
         className="w-full max-w-lg flex mb-6 shadow-md"
@@ -82,9 +102,7 @@ export default function HomePage({ base_url }) {
         </button>
       </form>
 
-      {/* Main Content */}
       <div className="flex flex-row space-x-4">
-        {/* Destination List */}
         <div className="flex-grow">
           {loading ? (
             <p>Loading...</p>
@@ -106,13 +124,11 @@ export default function HomePage({ base_url }) {
           )}
         </div>
 
-        {/* Recommendation Sidebar */}
         <div className="w-1/4">
           <RecommendationSidebar recommendations={recommendations} />
         </div>
       </div>
 
-      {/* Map Modal */}
       {selectedDestination && (
         <MapModal
           destination={selectedDestination}
