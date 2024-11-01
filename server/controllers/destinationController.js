@@ -5,6 +5,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 class DestinationController {
     static async read(req, res, next) {
         try {
+            console.log('masukkkk');
+
             const { search } = req.query
 
             const where = {}
@@ -63,6 +65,8 @@ class DestinationController {
 
     static async recomendation(req, res, next) {
         try {
+            console.log('masuk');
+
             const genAI = new GoogleGenerativeAI(process.env.API_KEY);
             const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -77,6 +81,8 @@ class DestinationController {
                 text,
             })
         } catch (error) {
+            console.log(error);
+
             next(error)
         }
     }

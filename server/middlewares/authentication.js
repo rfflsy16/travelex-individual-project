@@ -33,6 +33,8 @@ const authentication = async (req, res, next) => {
 
         next()
     } catch (err) {
+        console.log(err);
+
         let status = 500
         let message = 'Internal Server Error'
 

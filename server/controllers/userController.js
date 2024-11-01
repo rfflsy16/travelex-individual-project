@@ -67,25 +67,28 @@ class UserController {
                 audience: process.env.GOOGLE_CLIENT_ID
             })
 
-            const payload = ticket.getPayload();
+            const gPayload = ticket.getPayload();
 
             const [user, created] = await User.findOrCreate({
                 where: {
-                    username: payload.email
+                    email: gPayload.email
                 },
                 defaults: {
-                    username: payload.username,
-                    email: payload.email,
+                    username: "username",
+                    email: gPayload.email,
                     password: "password_google",
-                    imgUrl: 'dnkenjfc'
+                    imgUrl: 'dnkenjfc',
                 },
                 hooks: false
             })
 
-            const access_token = signToken({
+            const payload = {
                 id: user.id,
-                username: user.username,
-            })
+                email: user.email,
+                role: user.role
+            }
+
+            const access_token = signToken(payload)
 
             res.status(200).json({ access_token })
         } catch (error) {
