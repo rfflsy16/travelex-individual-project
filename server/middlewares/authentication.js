@@ -23,6 +23,8 @@ const authentication = async (req, res, next) => {
 
         if (!user) throw { name: "Unauthorized" }
 
+        // console.log(user)
+
         req.loginInfo = {
             userId: user.id,
             email: user.email,

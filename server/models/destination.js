@@ -51,7 +51,10 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    rating: DataTypes.FLOAT
+    rating: DataTypes.FLOAT,
+    imgUrl: DataTypes.STRING,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'Destination',

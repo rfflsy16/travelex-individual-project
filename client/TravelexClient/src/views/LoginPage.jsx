@@ -1,34 +1,33 @@
 import { useState } from "react";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
+import { login, googleLogin } from "../redux/slices/loginSlice";
 
-export default function LoginPage({ base_url }) {
+export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  async function login(e) {
+  const { loading, error } = useSelector((state) => state.user);
+
+  async function handleLogin(e) {
     e.preventDefault();
-    try {
-      const body = { email, password };
-      const { data } = await axios.post(`${base_url}/user/login`, body);
-      localStorage.setItem("access_token", data.access_token);
+    const result = await dispatch(login({ email, password }));
+    if (login.fulfilled.match(result)) {
       navigate("/");
-    } catch (error) {
-      console.log(error);
+    } else {
+      console.error("Login failed:", result.payload);
     }
   }
 
-  async function googleLogin(codeResponse) {
-    try {
-      const { data } = await axios.post(`${base_url}/user/google/login`, null, {
-        headers: { token: codeResponse.credential },
-      });
-      localStorage.setItem("access_token", data.access_token);
+  async function handleGoogleLogin(codeResponse) {
+    const result = await dispatch(googleLogin(codeResponse));
+    if (googleLogin.fulfilled.match(result)) {
       navigate("/");
-    } catch (error) {
-      console.log(error);
+    } else {
+      console.error("Google login failed:", result.payload);
     }
   }
 
@@ -38,7 +37,7 @@ export default function LoginPage({ base_url }) {
         <div className="w-full md:w-1/2 p-6">
           <img
             className="w-full h-full object-cover rounded-l-lg"
-            src="https://media.giphy.com/media/opvm3FXT2qYus/giphy.gif?cid=ecf05e470zh0avvhs7ohxcjuisjy3smg398j74ggaanqr581&ep=v1_gifs_related&rid=giphy.gif&ct=s"
+            src="https://media.giphy.com/media/u4BVHMmwHuvU2B722I/giphy.gif?cid=ecf05e47hwini2u15g8oj6p2sikt4eqmij9eh4d4dgdg5vcd&ep=v1_gifs_search&rid=giphy.gif&ct=g"
             alt="Travel GIF"
           />
         </div>
@@ -46,7 +45,7 @@ export default function LoginPage({ base_url }) {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center mb-6">
             Welcome Back!
           </h2>
-          <form className="space-y-6" onSubmit={login}>
+          <form className="space-y-6" onSubmit={handleLogin}>
             <div>
               <label
                 htmlFor="email"
@@ -82,14 +81,15 @@ export default function LoginPage({ base_url }) {
             <button
               type="submit"
               className="btn w-full bg-gradient-to-r from-teal-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white font-semibold shadow-lg rounded-lg transform hover:scale-105 transition-all duration-300"
+              disabled={loading}
             >
-              Sign in
+              {loading ? "Loading..." : "Sign in"}
             </button>
           </form>
+          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
           <div className="divider px-10">OR</div>
-          <GoogleLogin onSuccess={googleLogin} />
+          <GoogleLogin onSuccess={handleGoogleLogin} />
 
-          {/* Tautan ke halaman register */}
           <p className="text-gray-600 mt-6 text-center">
             Don't have an account?{" "}
             <Link to="/register" className="text-teal-700 font-semibold">

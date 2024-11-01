@@ -1,3 +1,4 @@
+const { where } = require('sequelize')
 const { User, Destination, Wishlist } = require('../models')
 
 class WishlistController {
@@ -23,18 +24,19 @@ class WishlistController {
     }
     static async add(req, res, next) {
         try {
-
-            const { id } = req.params
             const { userId } = req.loginInfo
 
-            if (!id) throw { name: 'NotAuthor' }
+            console.log(userId, 'iniii')
+
             if (!userId) throw { name: 'NotFound' }
 
-            const { user_id, destination_id, category, status } = req.body
-            const wishlist = await Wishlist.create({ destination_id, category, status, user_id }, {
-                where: {
-                    userId
-                }
+            const { destination_id, category, status } = req.body
+            const wishlist = await Wishlist.create({ destination_id, category, status, user_id: userId }, {
+                include: [
+                    {
+                        model: Destination
+                    }
+                ]
             })
 
             res.status(201).json({

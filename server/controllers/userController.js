@@ -15,16 +15,13 @@ class UserController {
                 user
             })
         } catch (error) {
-            // console.log(error)
-
-            // res.status(400).json({
-            //     message: error.errors[0].message
-            // })
             next(error)
         }
     }
 
     static async login(req, res, next) {
+        console.log('hehe');
+
         try {
             const { email, password } = req.body
 
@@ -59,6 +56,7 @@ class UserController {
             next(error)
         }
     }
+
     static async googleLogin(req, res, next) {
         try {
             const { token } = req.headers
@@ -76,8 +74,10 @@ class UserController {
                     username: payload.email
                 },
                 defaults: {
-                    username: payload.email,
-                    password: "password_google"
+                    username: payload.username,
+                    email: payload.email,
+                    password: "password_google",
+                    imgUrl: 'dnkenjfc'
                 },
                 hooks: false
             })

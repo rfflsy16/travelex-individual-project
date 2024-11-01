@@ -4,251 +4,359 @@
     "name": "Bali Beach Resort",
     "location": "Bali",
     "description": "Beautiful beach resort with ocean views",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?pantaibali",
+    "latitude": -8.409518,
+    "longitude": 115.188919
   },
   {
     "id": 2,
     "name": "Borobudur Temple",
     "location": "Magelang, Central Java",
     "description": "Ancient Buddhist temple with historical significance",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?borobudur",
+    "latitude": -7.607874,
+    "longitude": 110.203751
   },
   {
     "id": 3,
     "name": "Mount Bromo",
     "location": "East Java",
     "description": "Active volcano with beautiful sunrise views",
-    "rating": 4.9
+    "rating": 4.9,
+    "imgUrl": "https://picsum.photos/400/300?bromo",
+    "latitude": -7.942493,
+    "longitude": 112.953012
   },
   {
     "id": 4,
     "name": "Raja Ampat Islands",
     "location": "West Papua",
     "description": "Tropical paradise with diverse marine life",
-    "rating": 4.9
+    "rating": 4.9,
+    "imgUrl": "https://picsum.photos/400/300?rajaampat",
+    "latitude": -0.234536,
+    "longitude": 130.522779
   },
   {
     "id": 5,
     "name": "Jakarta City Center",
     "location": "Jakarta",
     "description": "Capital city of Indonesia with modern attractions",
-    "rating": 4.3
+    "rating": 4.3,
+    "imgUrl": "https://picsum.photos/400/300?jakarta",
+    "latitude": -6.208763,
+    "longitude": 106.845599
   },
   {
     "id": 6,
     "name": "Gili Islands",
     "location": "Lombok, West Nusa Tenggara",
     "description": "Small islands famous for beaches and diving spots",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?lombok",
+    "latitude": -8.35,
+    "longitude": 116.059722
   },
   {
     "id": 7,
     "name": "Yogyakarta Historical Sites",
     "location": "Yogyakarta",
     "description": "Cultural and historical heart of Indonesia",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?yogyakarta",
+    "latitude": -7.79558,
+    "longitude": 110.36949
   },
   {
     "id": 8,
     "name": "Batu Adventure Park",
     "location": "Batu, East Java",
     "description": "Adventure park with various outdoor activities",
-    "rating": 4.5
+    "rating": 4.5,
+    "imgUrl": "https://picsum.photos/400/300?batuadventure",
+    "latitude": -7.871439,
+    "longitude": 112.528641
   },
   {
     "id": 9,
     "name": "Komodo National Park",
     "location": "East Nusa Tenggara",
     "description": "National park home to the Komodo dragon",
-    "rating": 4.9
+    "rating": 4.9,
+    "imgUrl": "https://picsum.photos/400/300?komodonationalpark",
+    "latitude": -8.520444,
+    "longitude": 119.554254
   },
   {
     "id": 10,
     "name": "Bandung Shopping District",
     "location": "Bandung, West Java",
     "description": "Shopping area with fashion outlets and cafes",
-    "rating": 4.4
+    "rating": 4.4,
+    "imgUrl": "https://picsum.photos/400/300?bandung",
+    "latitude": -6.917464,
+    "longitude": 107.619123
   },
   {
     "id": 11,
     "name": "Padang Culinary Street",
     "location": "Padang, West Sumatra",
     "description": "Famous street with Padang's best culinary offerings",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?padang",
+    "latitude": -0.949244,
+    "longitude": 100.354272
   },
   {
     "id": 12,
     "name": "Tanjung Puting Ecotourism",
     "location": "Central Kalimantan",
     "description": "Ecotourism site known for orangutans and river cruises",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?tanjung",
+    "latitude": -2.907676,
+    "longitude": 111.035476
   },
   {
     "id": 13,
     "name": "Belitung Beach",
     "location": "Belitung",
     "description": "Famous for its clear waters and granite rocks",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?pantaibelitung",
+    "latitude": -2.563121,
+    "longitude": 107.644197
   },
   {
     "id": 14,
     "name": "Lake Toba",
     "location": "North Sumatra",
     "description": "Largest volcanic lake with breathtaking views",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?danautoba",
+    "latitude": 2.68436,
+    "longitude": 98.87562
   },
   {
     "id": 15,
     "name": "Mentawai Islands",
     "location": "West Sumatra",
     "description": "Surfing paradise with perfect waves",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?mentawai",
+    "latitude": -1.465747,
+    "longitude": 98.888555
   },
   {
     "id": 16,
     "name": "Tanah Lot Temple",
     "location": "Bali",
     "description": "Iconic temple on the sea with beautiful sunsets",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?tanahlot",
+    "latitude": -8.62119,
+    "longitude": 115.086534
   },
   {
     "id": 17,
     "name": "Ubud Art Market",
     "location": "Bali",
     "description": "Traditional art market offering crafts and souvenirs",
-    "rating": 4.5
+    "rating": 4.5,
+    "imgUrl": "https://picsum.photos/400/300?market",
+    "latitude": -8.519215,
+    "longitude": 115.263085
   },
   {
     "id": 18,
     "name": "Derawan Islands",
     "location": "East Kalimantan",
     "description": "Famous for snorkeling and diverse marine life",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?island",
+    "latitude": 2.288554,
+    "longitude": 118.244068
   },
   {
     "id": 19,
     "name": "Jomblang Cave",
     "location": "Yogyakarta",
     "description": "Underground cave with a dramatic beam of light",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?cave",
+    "latitude": -8.026724,
+    "longitude": 110.631241
   },
   {
     "id": 20,
     "name": "Madakaripura Waterfall",
     "location": "East Java",
     "description": "Tall waterfall with lush greenery",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?waterfall",
+    "latitude": -7.91585,
+    "longitude": 113.032806
   },
   {
     "id": 21,
     "name": "Wakatobi National Park",
     "location": "Southeast Sulawesi",
     "description": "Renowned for its marine biodiversity",
-    "rating": 4.9
+    "rating": 4.9,
+    "imgUrl": "https://picsum.photos/400/300?marine",
+    "latitude": -5.507626,
+    "longitude": 123.543831
   },
   {
     "id": 22,
     "name": "Prambanan Temple",
     "location": "Yogyakarta",
     "description": "Largest Hindu temple compound in Indonesia",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?temple",
+    "latitude": -7.75202,
+    "longitude": 110.491028
   },
   {
     "id": 23,
     "name": "Bunaken Marine Park",
     "location": "North Sulawesi",
     "description": "Diving spot with stunning coral reefs",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?diving",
+    "latitude": 1.624209,
+    "longitude": 124.755704
   },
   {
     "id": 24,
     "name": "Kawah Ijen",
     "location": "East Java",
     "description": "Volcano with a blue flame phenomenon",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?volcano",
+    "latitude": -8.058978,
+    "longitude": 114.242176
   },
   {
     "id": 25,
     "name": "Bali Safari and Marine Park",
     "location": "Bali",
     "description": "A popular safari park with diverse wildlife",
-    "rating": 4.5
+    "rating": 4.5,
+    "imgUrl": "https://picsum.photos/400/300?safari",
+    "latitude": -8.596095,
+    "longitude": 115.321552
   },
   {
     "id": 26,
     "name": "Nusa Penida Island",
     "location": "Bali",
     "description": "Island with breathtaking cliffs and beaches",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?island",
+    "latitude": -8.727853,
+    "longitude": 115.544423
   },
   {
     "id": 27,
     "name": "Lake Sentani",
     "location": "Papua",
     "description": "Beautiful lake surrounded by rolling hills",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?lake",
+    "latitude": -2.602619,
+    "longitude": 140.63253
   },
   {
     "id": 28,
     "name": "Way Kambas National Park",
     "location": "Lampung",
     "description": "Sanctuary for Sumatran elephants and rhinos",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?wildlife",
+    "latitude": -4.722667,
+    "longitude": 105.931487
   },
   {
     "id": 29,
     "name": "Tana Toraja",
     "location": "South Sulawesi",
     "description": "Traditional village with unique funeral rites",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?village",
+    "latitude": -3.068843,
+    "longitude": 119.836184
   },
   {
     "id": 30,
     "name": "Mount Rinjani",
     "location": "Lombok",
     "description": "Second-highest volcano in Indonesia",
-    "rating": 4.9
+    "rating": 4.9,
+    "imgUrl": "https://picsum.photos/400/300?mountain",
+    "latitude": -8.411049,
+    "longitude": 116.455773
   },
   {
     "id": 31,
     "name": "Carstensz Pyramid",
     "location": "Papua",
     "description": "Highest summit in Oceania with snow peaks",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?snow",
+    "latitude": -4.082001,
+    "longitude": 137.185242
   },
   {
     "id": 32,
     "name": "Baluran National Park",
     "location": "East Java",
     "description": "Known as the 'Little Africa' of Java",
-    "rating": 4.6
+    "rating": 4.6,
+    "imgUrl": "https://picsum.photos/400/300?safari",
+    "latitude": -7.855262,
+    "longitude": 114.380266
   },
   {
     "id": 33,
     "name": "Pangandaran Beach",
     "location": "West Java",
     "description": "Popular beach for surfing and sunset views",
-    "rating": 4.5
+    "rating": 4.5,
+    "imgUrl": "https://picsum.photos/400/300?beach",
+    "latitude": -7.608164,
+    "longitude": 108.656461
   },
   {
     "id": 34,
     "name": "Menjangan Island",
     "location": "Bali",
     "description": "Island with diverse marine life and clear waters",
-    "rating": 4.7
+    "rating": 4.7,
+    "imgUrl": "https://picsum.photos/400/300?island",
+    "latitude": -8.0883,
+    "longitude": 114.51759
   },
   {
     "id": 35,
     "name": "Bukit Lawang",
     "location": "North Sumatra",
     "description": "Jungle area known for orangutan spotting",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?jungle",
+    "latitude": 3.545204,
+    "longitude": 98.142812
   },
   {
     "id": 36,
     "name": "Togean Islands",
     "location": "Central Sulawesi",
     "description": "Islands with crystal-clear waters and coral reefs",
-    "rating": 4.8
+    "rating": 4.8,
+    "imgUrl": "https://picsum.photos/400/300?island",
+    "latitude": -0.399605,
+    "longitude": 121.608367
   }
 ]

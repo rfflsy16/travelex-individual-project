@@ -8,6 +8,7 @@ const authentication = require('../middlewares/authentication')
 
 router.use('/user', user)
 router.use(authentication)
+
 router.use('/home', destination)
 router.use('/wishlists', wishlist)
 
