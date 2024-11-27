@@ -33,7 +33,7 @@ export default function MapModal({ destination, onClose }) {
             lat: destination.latitude,
             lng: destination.longitude,
           }}
-          zoom={15}
+          zoom={16}
         >
           <Marker
             position={{
